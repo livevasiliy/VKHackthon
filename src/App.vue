@@ -1,10 +1,15 @@
 <template>
-  <cards card-text />
+  	<cards />  	
 </template>
 
 <script>
-  import Cards from './Cards'
+  import Cards from './Cards.vue'
+  // import Navbar from './Navbar.vue'
+
   export default{
-  	components: {Cards} 
+  	components: {
+  		'cards': Cards,
+  		// 'navbar': Navbar
+  	}
   }
 </script>
