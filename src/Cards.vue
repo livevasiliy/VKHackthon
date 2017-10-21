@@ -2,66 +2,68 @@
   <v-layout>
     <v-flex xs4 v-for="i in 4" :key="i" pl-3 pr-3 pt-3>
       <v-card>
+      	<v-alert color="info" dismissible v-model="alert" transition="slide-y-transition">
+			<div class="alertFriend">friend</div>
+
+		</v-alert>
         <v-card-media :src="logo" height="200px">
         </v-card-media>
         <div class="acounts">
           <div id="mount">            
             <v-btn block color="grey lighten-3"><b>{{ count }} friends</b><br></v-btn>
-
           </div>
           <div class="avatars">
+          <v-btn fab dark color="indigo" v-if="!alert" v-on:click="alert = true">
+            <v-icon dark>add</v-icon>
+          </v-btn>
 
-            <v-btn fab dark color="indigo">
-              <v-icon dark>add</v-icon>
-            </v-btn>
+          <v-avatar >
+            <img src="public/2.jpg" alt="John">
+          </v-avatar>
 
-            <v-avatar >
-              <img src="public/2.jpg" alt="John">
-            </v-avatar>
+          <v-avatar >
+            <img src="public/3.jpg" alt="John">
+          </v-avatar>
 
-            <v-avatar >
-              <img src="public/3.jpg" alt="John">
-            </v-avatar>
+          <v-avatar >
+            <img src="public/4.jpg" alt="John">
+          </v-avatar>
 
-            <v-avatar >
-              <img src="public/4.jpg" alt="John">
-            </v-avatar>
+          <v-avatar >
+            <img src="public/5.jpg" alt="John">
+          </v-avatar>
 
-            <v-avatar >
-              <img src="public/5.jpg" alt="John">
-            </v-avatar>
+          <v-avatar >
+            <img src="public/6.jpg" alt="John">
+          </v-avatar>
 
-            <v-avatar >
-              <img src="public/6.jpg" alt="John">
-            </v-avatar>
+          <v-avatar >
+            <img src="public/7.jpg" alt="John">
+          </v-avatar>
 
-            <v-avatar >
-              <img src="public/7.jpg" alt="John">
-            </v-avatar>
+          <v-avatar >
+            <img src="public/8.jpg" alt="John">
+          </v-avatar>
 
-            <v-avatar >
-              <img src="public/8.jpg" alt="John">
-            </v-avatar>
+          <v-avatar >
+            <img src="public/9.jpg" alt="John">
+          </v-avatar>
 
-            <v-avatar >
-              <img src="public/9.jpg" alt="John">
-            </v-avatar>
-
-            <v-avatar >
-              <img src="public/10.jpg" alt="John">
-            </v-avatar>
-          </div>
+          <v-avatar >
+            <img src="public/10.jpg" alt="John">
+          </v-avatar>
         </div>
-        <v-card-title primary-title>
-          <div>
-            <h3 class="headline mb-0">{{ nameCard }}</h3>
-            <div>{{ descrtp }} </div>
-          </div>
-        </v-card-title>
-        <navbar></navbar>
-      </v-card>
-    </v-flex>
-  </v-layout>
+      </div>
+      <v-card-title primary-title>
+        <div>
+          <h3 class="headline mb-0">{{ nameCard }}</h3>
+          <div>{{ descrtp }} </div>
+        </div>
+      </v-card-title>
+      <navbar></navbar>
+    </v-card>
+  </v-flex>
+</v-layout>
 </template>
 
 <script>
@@ -70,13 +72,15 @@ export default {
 
   data () {
     return {
-      logo: "https://img05.rl0.ru/afisha/e560x-q80i/s4.afisha.ru/MediaStorage/e0/41/4bc4fddb54e74ce7a259080141e0.jpg",
-      nameCard: "Плакат эпохи революции", 
-      descrtp: "Плакат, пожалуй, шел рука об руку с революцией — после 1917 года именно он был рупором пропаганды и с успехом прививал малограмотному населению новые большевистские установки.",
-      count: "15",
-      
-      card_text: 'Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel. Dolorem ancillae an mei, ut putant invenire splendide mel, ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.'
-    } 
+    	alert: false,
+	    logo: "https://img05.rl0.ru/afisha/e560x-q80i/s4.afisha.ru/MediaStorage/e0/41/4bc4fddb54e74ce7a259080141e0.jpg",
+	    nameCard: "Плакат эпохи революции", 
+	    descrtp: "Плакат, пожалуй, шел рука об руку с революцией — после 1917 года именно он был рупором пропаганды и с успехом прививал малограмотному населению новые большевистские установки.",
+	    count: "15",
+	      
+	    card_text: 'Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel. Dolorem ancillae an mei, ut putant invenire splendide mel, ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.'
+    }
+
   },
   components: {Navbar}
 }
@@ -85,7 +89,6 @@ export default {
 <style>
 .card {
   background-color: white;
-  
 }
 .acounts {
   background: #f5f5f5;
@@ -122,7 +125,7 @@ export default {
   width: 48px;
   height: 48px;
   box-shadow: none;
-}
+  }
 #mount { 
   display: table;
   float: left;
@@ -131,7 +134,7 @@ export default {
   padding: 0;
   text-align: center;
   position: relative;
-  z-index: 10;
+    z-index: 10;
 }
 #mount>.btn{
   box-shadow: none;
@@ -148,6 +151,19 @@ export default {
 }
 ::-webkit-scrollbar { 
   display: none; 
+}
+.alert{
+	    position: absolute;
+    z-index: 11;
+    top: -4px;
+    height: 100%;
+    width: 100%;
+}
+.alert>div{
+	width: 100%;
+}
+.alertFriend{
+
 }
 
 </style>
