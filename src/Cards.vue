@@ -1,19 +1,39 @@
 <template>
   <v-layout>
-    <v-flex xs4 v-for="i in 4" :key="i" pl-3 pr-3 pt-3>
+    <v-flex xs4 v-for="i in 1" pl-3 pr-3 pt-3>
       <v-card>
       	<v-alert color="info" dismissible v-model="alert" transition="slide-y-transition">
-			<div class="alertFriend">friend</div>
-
+			<div class="alertName">friend</div>
+			<div class="alertFriendList">
+				<div class="friend" v-for="i in 15">
+					<div class="friend-img">
+						<img src="" alt="">
+					</div>
+					<div class="friend-name">asdfsadf</div>
+				</div>
+			</div>
 		</v-alert>
+		<v-alert color="info" dismissible v-model="alert" transition="slide-y-transition">
+			<!-- <div class="alertName">friend</div>
+			<div class="alertFriendList">
+				<div class="friend" v-for="i in 15">
+					<div class="friend-img">
+						<img src="" alt="">
+					</div>
+					<div class="friend-name">asdfsadf</div>
+				</div>
+			</div> -->
+			<myFriend></myFriend>
+		</v-alert>
+
         <v-card-media :src="logo" height="200px">
         </v-card-media>
         <div class="acounts">
           <div id="mount">            
-            <v-btn block color="grey lighten-3"><b>{{ count }} friends</b><br></v-btn>
+            <v-btn block color="grey lighten-3" v-on:click="alert = true"><b>{{ count }} friends</b><br></v-btn>
           </div>
           <div class="avatars">
-          <v-btn fab dark color="indigo" v-if="!alert" v-on:click="alert = true">
+          <v-btn fab dark color="indigo" v-on:click="alert = true">
             <v-icon dark>add</v-icon>
           </v-btn>
 
@@ -67,7 +87,8 @@
 </template>
 
 <script>
-import Navbar from './Navbar.vue'
+import Navbar from './Navbar.vue';
+import MyFriend from './MyFriend.vue';
 export default {
 
   data () {
@@ -80,90 +101,107 @@ export default {
 	      
 	    card_text: 'Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel. Dolorem ancillae an mei, ut putant invenire splendide mel, ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.'
     }
-
   },
-  components: {Navbar}
+  components: {Navbar, MyFriend}
 }
 </script>
 
 <style>
-.card {
-  background-color: white;
-}
-.acounts {
-  background: #f5f5f5;
-  position: relative;
-  float: left;
-  width: 100%;
-  margin: 0;
-  height: 78px;
-  padding: 0;
-  box-shadow: 0px 5px 7px -5px grey;
+	.card {
+	  background-color: white;
+	}
+	.acounts {
+	  background: #f5f5f5;
+	  position: relative;
+	  float: left;
+	  width: 100%;
+	  margin: 0;
+	  height: 78px;
+	  padding: 0;
+	  box-shadow: 0px 5px 7px -5px grey;
+	}
+	.avatars {
+	  position: absolute;
+	  top: 0;
+	  bottom: 0;
+	  margin: auto 0;
+	  right: 0;
 
-}
-.avatars {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto 0;
-  right: 0;
-
-  float: left;
-  padding: 0 10px;
-  width: 73%;
-  height: 48px;
-
+	  float: left;
+	  padding: 0 10px;
+	  width: 73%;
+	  height: 48px;
 
 
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
 
-}
-.avatars>.btn{
-  margin: 0 5px;
-  width: 48px;
-  height: 48px;
-  box-shadow: none;
-  }
-#mount { 
-  display: table;
-  float: left;
-  width: 15%;
-  height: 100%;
-  padding: 0;
-  text-align: center;
-  position: relative;
-    z-index: 10;
-}
-#mount>.btn{
-  box-shadow: none;
-  height: 100%;
-  margin: 0;
-  text-transform: lowercase;
-}
-.friens{
-  display: table-cell;
-  vertical-align: middle;
-}
-.avatar{
-  margin: 0 5px;
-}
-::-webkit-scrollbar { 
-  display: none; 
-}
-.alert{
-	    position: absolute;
-    z-index: 11;
-    top: -4px;
-    height: 100%;
-    width: 100%;
-}
-.alert>div{
-	width: 100%;
-}
-.alertFriend{
-
-}
+	  overflow-x: scroll;
+	  overflow-y: hidden;
+	  white-space: nowrap;
+	}
+	.avatars>.btn{
+	  margin: 0 5px;
+	  width: 48px;
+	  height: 48px;
+	  box-shadow: none;
+	  }
+	#mount { 
+	  display: table;
+	  float: left;
+	  width: 15%;
+	  height: 100%;
+	  padding: 0;
+	  text-align: center;
+	  position: relative;
+	    z-index: 10;
+	}
+	#mount>.btn{
+	  box-shadow: none;
+	  height: 100%;
+	  margin: 0;
+	  text-transform: lowercase;
+	}
+	.friens{
+	  display: table-cell;
+	  vertical-align: middle;
+	}
+	.avatar{
+	  margin: 0 5px;
+	}
+	::-webkit-scrollbar { 
+	  display: none; 
+	}
+	.alert{
+		position: absolute;
+	    z-index: 11;
+	    top: -4px;
+	    height: 100%;
+	    width: 100%;
+	}
+	.alert>div{
+		width: 100%;
+		overflow: scroll;
+	}
+	.alertName{
+		margin-bottom: 10px;
+	}
+	.friend{
+		width: 100%;
+		height: 90px;
+		padding: 10px 0;
+		box-shadow: 0px 1px 0px 0px darkslategrey;
+	}
+	.friend-img{
+		float: left;
+		width: 70px;
+		height: 100%;
+		border-radius: 50%;
+    	background-color: yellow;
+	}
+	.friend-name{
+		height: 100%;
+		float: left;
+		line-height: 70px;
+		margin-left: 20px;
+	}
 
 </style>
