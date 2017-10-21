@@ -1,13 +1,13 @@
 <template>
-  	<cards />  	
+  	<cards />
 </template>
 
 <script>
   import Cards from './Cards.vue'
-
+  
   export default{
   	components: {
-  		'cards': Cards  		
-  	}
+  		'cards': Cards
+  		  	}
   }
 </script>
