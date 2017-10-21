@@ -8,7 +8,11 @@
 
         <div class="acounts">
           <div id="mount">
-            <span class="friens"><b>{{ count }} друзей</b><br>идут</span><br>
+              <v-btn color="warning" fab dark>
+                <v-icon>acount_circle</v-icon>
+                <span>3</span>
+            </v-btn>
+            <!--             <span class="friens"><b>{{ count }} друзей</b><br>идут</span><br> -->
           </div>
           <div class="avatars">
             <v-avatar>

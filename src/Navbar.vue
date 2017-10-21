@@ -1,5 +1,5 @@
 <template>
-  <v-card height="100px">
+  <v-card height="57px">
     <v-bottom-nav absolute :value="true" :active.sync="e1" class="transparent">
       <v-btn flat color="teal" value="recent">
         <span>Recent</span>
