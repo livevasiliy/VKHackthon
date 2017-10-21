@@ -1,18 +1,14 @@
 <template>
   <v-layout>
-    <v-flex xs12 sm4 offset-sm3>
-
+    <!-- <v-flex xs12 sm4 offset-sm3> -->
+      <v-flex xs4 sm v-for="i in 4" :key="i" pl-3 pr-3 pt-3>
       <v-card>
-        <v-card-media src="/public/vkhack.jpg" height="200px">
+        <v-card-media :src="logo" height="200px">
         </v-card-media>
-
         <div class="acounts">
-          <div id="mount">
-              <v-btn color="warning" fab dark>
-                <v-icon>acount_circle</v-icon>
-                <span>3</span>
-            </v-btn>
-            <!--             <span class="friens"><b>{{ count }} друзей</b><br>идут</span><br> -->
+          <div id="mount">            
+            <v-btn block color="grey lighten-3"><b>{{ count }} friends</b><br></v-btn>
+
           </div>
           <div class="avatars">
             <v-avatar>
@@ -59,7 +55,7 @@
         <v-card-title primary-title>
           <div>
             <h3 class="headline mb-0">{{ nameCard }}</h3>
-            <div>Located two hours south of Sydney in the <br>Southern Highlands of New South Wales, ...</div>
+            <div>{{ descrtp }} </div>
           </div>
         </v-card-title>
         <navbar></navbar>
@@ -74,8 +70,11 @@ export default {
 
   data () {
     return {
+      logo: "https://img05.rl0.ru/afisha/e560x-q80i/s4.afisha.ru/MediaStorage/e0/41/4bc4fddb54e74ce7a259080141e0.jpg",
+      nameCard: "Плакат эпохи революции", 
+      descrtp: "Плакат, пожалуй, шел рука об руку с революцией — после 1917 года именно он был рупором пропаганды и с успехом прививал малограмотному населению новые большевистские установки.",
       count: "15",
-      nameCard: "Hello Vue",
+      
       card_text: 'Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, te duo agam libris qualisque, utroque quaestio accommodare no qui. Et percipit laboramus usu, no invidunt verterem nominati mel. Dolorem ancillae an mei, ut putant invenire splendide mel, ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.'
     } 
   },
@@ -88,6 +87,7 @@ export default {
   background-color: white;
 }
 .acounts {
+  background: #f5f5f5;
   position: relative;
   float: left;
   width: 100%;
@@ -95,7 +95,7 @@ export default {
   height: 78px;
   padding: 0;
   box-shadow: 0px 5px 7px -5px grey;
-  padding: 5px;
+
 }
 .avatars {
   position: absolute;
@@ -106,8 +106,9 @@ export default {
 
   float: left;
   padding: 0 10px;
-  width: 84%;
+  width: 78%;
   height: 48px;
+
 
 
   overflow-x: scroll;
@@ -122,8 +123,12 @@ export default {
   height: 100%;
   padding: 0;
   text-align: center;
-  border-right: 1px solid grey; 
-  text-align: center;
+}
+#mount>.btn{
+  box-shadow: none;
+  height: 100%;
+  margin: 0;
+  text-transform: lowercase;
 }
 .friens{
   display: table-cell;
