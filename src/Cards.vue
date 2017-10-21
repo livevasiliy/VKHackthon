@@ -1,7 +1,6 @@
 <template>
   <v-layout>
-    <!-- <v-flex xs12 sm4 offset-sm3> -->
-      <v-flex xs4 sm v-for="i in 4" :key="i" pl-3 pr-3 pt-3>
+    <v-flex xs4 v-for="i in 4" :key="i" pl-3 pr-3 pt-3>
       <v-card>
         <v-card-media :src="logo" height="200px">
         </v-card-media>
@@ -11,57 +10,58 @@
 
           </div>
           <div class="avatars">
-            <v-avatar>
-              <img src="public/1.jpg" alt="John">
-            </v-avatar>
 
-            <v-avatar >
-              <img src="public/2.jpg" alt="John">
-            </v-avatar>
+          <v-btn fab dark color="indigo">
+            <v-icon dark>add</v-icon>
+          </v-btn>
 
-            <v-avatar >
-              <img src="public/3.jpg" alt="John">
-            </v-avatar>
+          <v-avatar >
+            <img src="public/2.jpg" alt="John">
+          </v-avatar>
 
-            <v-avatar >
-              <img src="public/4.jpg" alt="John">
-            </v-avatar>
+          <v-avatar >
+            <img src="public/3.jpg" alt="John">
+          </v-avatar>
 
-            <v-avatar >
-              <img src="public/5.jpg" alt="John">
-            </v-avatar>
+          <v-avatar >
+            <img src="public/4.jpg" alt="John">
+          </v-avatar>
 
-            <v-avatar >
-              <img src="public/6.jpg" alt="John">
-            </v-avatar>
+          <v-avatar >
+            <img src="public/5.jpg" alt="John">
+          </v-avatar>
 
-            <v-avatar >
-              <img src="public/7.jpg" alt="John">
-            </v-avatar>
+          <v-avatar >
+            <img src="public/6.jpg" alt="John">
+          </v-avatar>
 
-            <v-avatar >
-              <img src="public/8.jpg" alt="John">
-            </v-avatar>
+          <v-avatar >
+            <img src="public/7.jpg" alt="John">
+          </v-avatar>
 
-            <v-avatar >
-              <img src="public/9.jpg" alt="John">
-            </v-avatar>
+          <v-avatar >
+            <img src="public/8.jpg" alt="John">
+          </v-avatar>
 
-            <v-avatar >
-              <img src="public/10.jpg" alt="John">
-            </v-avatar>
-          </div>
+          <v-avatar >
+            <img src="public/9.jpg" alt="John">
+          </v-avatar>
+
+          <v-avatar >
+            <img src="public/10.jpg" alt="John">
+          </v-avatar>
         </div>
-        <v-card-title primary-title>
-          <div>
-            <h3 class="headline mb-0">{{ nameCard }}</h3>
-            <div>{{ descrtp }} </div>
-          </div>
-        </v-card-title>
-        <navbar></navbar>
-      </v-card>
-    </v-flex>
-  </v-layout>
+      </div>
+      <v-card-title primary-title>
+        <div>
+          <h3 class="headline mb-0">{{ nameCard }}</h3>
+          <div>{{ descrtp }} </div>
+        </div>
+      </v-card-title>
+      <navbar></navbar>
+    </v-card>
+  </v-flex>
+</v-layout>
 </template>
 
 <script>
@@ -106,7 +106,7 @@ export default {
 
   float: left;
   padding: 0 10px;
-  width: 78%;
+  width: 73%;
   height: 48px;
 
 
@@ -116,6 +116,12 @@ export default {
   white-space: nowrap;
 
 }
+.avatars>.btn{
+  margin: 0 5px;
+  width: 48px;
+  height: 48px;
+  box-shadow: none;
+  }
 #mount { 
   display: table;
   float: left;
@@ -123,6 +129,8 @@ export default {
   height: 100%;
   padding: 0;
   text-align: center;
+  position: relative;
+    z-index: 10;
 }
 #mount>.btn{
   box-shadow: none;
