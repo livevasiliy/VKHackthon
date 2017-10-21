@@ -11,57 +11,57 @@
           </div>
           <div class="avatars">
 
-          <v-btn fab dark color="indigo">
-            <v-icon dark>add</v-icon>
-          </v-btn>
+            <v-btn fab dark color="indigo">
+              <v-icon dark>add</v-icon>
+            </v-btn>
 
-          <v-avatar >
-            <img src="public/2.jpg" alt="John">
-          </v-avatar>
+            <v-avatar >
+              <img src="public/2.jpg" alt="John">
+            </v-avatar>
 
-          <v-avatar >
-            <img src="public/3.jpg" alt="John">
-          </v-avatar>
+            <v-avatar >
+              <img src="public/3.jpg" alt="John">
+            </v-avatar>
 
-          <v-avatar >
-            <img src="public/4.jpg" alt="John">
-          </v-avatar>
+            <v-avatar >
+              <img src="public/4.jpg" alt="John">
+            </v-avatar>
 
-          <v-avatar >
-            <img src="public/5.jpg" alt="John">
-          </v-avatar>
+            <v-avatar >
+              <img src="public/5.jpg" alt="John">
+            </v-avatar>
 
-          <v-avatar >
-            <img src="public/6.jpg" alt="John">
-          </v-avatar>
+            <v-avatar >
+              <img src="public/6.jpg" alt="John">
+            </v-avatar>
 
-          <v-avatar >
-            <img src="public/7.jpg" alt="John">
-          </v-avatar>
+            <v-avatar >
+              <img src="public/7.jpg" alt="John">
+            </v-avatar>
 
-          <v-avatar >
-            <img src="public/8.jpg" alt="John">
-          </v-avatar>
+            <v-avatar >
+              <img src="public/8.jpg" alt="John">
+            </v-avatar>
 
-          <v-avatar >
-            <img src="public/9.jpg" alt="John">
-          </v-avatar>
+            <v-avatar >
+              <img src="public/9.jpg" alt="John">
+            </v-avatar>
 
-          <v-avatar >
-            <img src="public/10.jpg" alt="John">
-          </v-avatar>
+            <v-avatar >
+              <img src="public/10.jpg" alt="John">
+            </v-avatar>
+          </div>
         </div>
-      </div>
-      <v-card-title primary-title>
-        <div>
-          <h3 class="headline mb-0">{{ nameCard }}</h3>
-          <div>{{ descrtp }} </div>
-        </div>
-      </v-card-title>
-      <navbar></navbar>
-    </v-card>
-  </v-flex>
-</v-layout>
+        <v-card-title primary-title>
+          <div>
+            <h3 class="headline mb-0">{{ nameCard }}</h3>
+            <div>{{ descrtp }} </div>
+          </div>
+        </v-card-title>
+        <navbar></navbar>
+      </v-card>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
@@ -85,6 +85,7 @@ export default {
 <style>
 .card {
   background-color: white;
+  
 }
 .acounts {
   background: #f5f5f5;
@@ -121,7 +122,7 @@ export default {
   width: 48px;
   height: 48px;
   box-shadow: none;
-  }
+}
 #mount { 
   display: table;
   float: left;
@@ -130,7 +131,7 @@ export default {
   padding: 0;
   text-align: center;
   position: relative;
-    z-index: 10;
+  z-index: 10;
 }
 #mount>.btn{
   box-shadow: none;
