@@ -1,12 +1,10 @@
 <template>
-  <hello text='Hello World!'/>
+  <cards card-text />
 </template>
 
 <script>
-  import Hello from './Hello' 
-  
-  export default {
-    components: {Hello}
+  import Cards from './Cards'
+  export default{
+  	components: {Cards} 
   }
 </script>
-  
